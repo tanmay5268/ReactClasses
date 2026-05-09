@@ -1,7 +1,7 @@
 import { Toggles } from "./Toggles";
 import { useState } from "react";
 import Button from "@mui/material/Button";
-const Generator = () => {
+const Generator = ({ data }) => {
 const [passwordLength, setPasswordLength] = useState(8);
   const [uppercase, setUppercase] = useState(false);
   const [numbers, setNumbers] = useState(false);
@@ -58,6 +58,7 @@ const [passwordLength, setPasswordLength] = useState(8);
         handleUppercase={handleUppercase}
       />
       <Toggles
+        toggledata={data}
         Label="hello Special Characters"
         uppercase={specialChars}
         handleUppercase={handleSpecialChars}
@@ -68,7 +69,7 @@ const [passwordLength, setPasswordLength] = useState(8);
         handleUppercase={handleNumbers}
       />
       <div onClick={generatePassword} className="mt-3 text-3xl">
-        <Button variant="contained">
+        <Button  variant="contained">
           <h1 className="text-xl font-bold">Generate Password</h1>
         </Button>
       </div>
